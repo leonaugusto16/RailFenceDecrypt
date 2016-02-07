@@ -10,7 +10,7 @@ def decrypt(encrypted, rails, showOff = 0):
 	array = [[" " for col in range(len(encrypted))] for row in range(rails)]
 	read = 0
 
-	for(rail in range(rails)):
+	for rail in range(rails):
 		pos = offset(1,rails,rail)
 		even = 0
 
@@ -19,7 +19,7 @@ def decrypt(encrypted, rails, showOff = 0):
 		else:
 			pos = int(pos/2)
 		while(pos < len(encrypted)):
-			if read = len(encrypted):
+			if read == len(encrypted):
 				break
 
 			array[rail][pos] = encrypted[read]
@@ -29,13 +29,13 @@ def decrypt(encrypted, rails, showOff = 0):
 			even = not even
 
 	if showOff:
-		for(row in array):
+		for row in array:
 			print row
 
 	decoded = ""
 
-	for(x in range(len(encrypted)):
-		for(y in range(rails)):
+	for x in range(len(encrypted)):
+		for y in range(rails):
 			if(array[y][x] != " "):
 				decoded += array[y][x]
 	return decoded 
